@@ -1,0 +1,35 @@
+$spaces: 2, 4, 8, 12, 16, 24;
+
+@each $space in $spaces {
+  .mt-#{$space} {
+    margin-top: $space;
+  }
+
+  .mb-#{$space} {
+    margin-bottom: $space;
+  }
+
+  .ml-#{$space} {
+    margin-left: $space;
+  }
+
+  .mr-#{$space} {
+    margin-right: $space;
+  }
+
+  .pt-#{$space} {
+    padding-top: $space;
+  }
+
+  .pb-#{$space} {
+    padding-bottom: $space;
+  }
+
+  .pl-#{$space} {
+    padding-left: $space;
+  }
+
+  .pr-#{$space} {
+    padding-right: $space;
+  }
+}
