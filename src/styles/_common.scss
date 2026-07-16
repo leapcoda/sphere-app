@@ -1,35 +1,12 @@
 $spaces: 2, 4, 8, 12, 16, 24;
 
 @each $space in $spaces {
-  .mt-#{$space} {
-    margin-top: #{$space}px;
-  }
-
-  .mb-#{$space} {
-    margin-bottom: #{$space}px;
-  }
-
-  .ml-#{$space} {
-    margin-left: #{$space}px;
-  }
-
-  .mr-#{$space} {
-    margin-right: #{$space}px;
-  }
-
-  .pt-#{$space} {
-    padding-top: #{$space}px;
-  }
-
-  .pb-#{$space} {
-    padding-bottom: #{$space}px;
-  }
-
-  .pl-#{$space} {
-    padding-left: #{$space}px;
-  }
-
-  .pr-#{$space} {
-    padding-right: #{$space}px;
-  }
+  .mt-#{$space} { margin-top: #{$space}px; }
+  .mb-#{$space} { margin-bottom: #{$space}px; }
+  .ml-#{$space} { margin-left: #{$space}px; }
+  .mr-#{$space} { margin-right: #{$space}px; }
+  .pt-#{$space} { padding-top: #{$space}px; }
+  .pb-#{$space} { padding-bottom: #{$space}px; }
+  .pl-#{$space} { padding-left: #{$space}px; }
+  .pr-#{$space} { padding-right: #{$space}px; }
 }

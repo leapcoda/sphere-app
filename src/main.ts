@@ -5,7 +5,7 @@ import SvgIcon from '@/components/SvgIcon.vue';
 import router from './router';
 import pinia from './stores';
 
-import '@/styles/main.scss';
+import '@/styles/index.scss';
 
 const app = createApp(App);
 
