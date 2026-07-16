@@ -1,0 +1,18 @@
+:root {
+  --td-brand-color-1: #e5fbfa;
+  --td-brand-color-2: #c1eeed;
+  --td-brand-color-3: #8cd8d8;
+  --td-brand-color-4: #01c2c3;
+  --td-brand-color-5: #00a4a5;
+  --td-brand-color-6: #008687;
+  --td-brand-color-7: #006a6b;
+  --td-brand-color-8: #005152;
+  --td-brand-color-9: #003a3b;
+  --td-brand-color-10: #002627;
+  --td-brand-color: var(--td-brand-color-4);
+  --td-brand-color-focus: var(--td-brand-color-1);
+  --td-brand-color-active: var(--td-brand-color-5);
+  --td-brand-color-disabled: var(--td-brand-color-3);
+  --td-brand-color-light: var(--td-brand-color-1);
+  --td-brand-color-light-active: var(--td-brand-color-2);
+}
