@@ -1,9 +1,11 @@
+import { postcssConfig } from './src/config';
+
 export default {
   plugins: {
     'postcss-px-conversion': {
       unitType: 'px',
-      viewportWidth: 375,
-      unitPrecision: 5,
+      viewportWidth: postcssConfig.viewportWidth,
+      unitPrecision: postcssConfig.unitPrecision,
       viewportUnit: 'vw',
       fontViewportUnit: 'vw',
       minPixelValue: 1,
