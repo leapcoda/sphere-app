@@ -1,0 +1,106 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.page {
+  --color-black-1: rgba(0, 0, 0, 0.72);
+  --color-black-2: rgba(0, 0, 0, 0.48);
+  --color-black-3: rgba(0, 0, 0, 0.24);
+  min-height: 100dvh;
+  background-color: #fff;
+}
+
+.t-navbar {
+  --td-navbar-color: #{$color-text-4};
+
+  .nav-help {
+    font-size: 14px;
+  }
+}
+
+.page-content {
+  .login-header {
+    h1 {
+      font-size: 24px;
+    }
+
+    p {
+      @include text($size: 13px, $color: $color-text-4);
+    }
+  }
+
+  .login-form {
+    --td-input-border-left-space: 0;
+    --td-input-label-text-font: var(--td-font-mark-medium);
+    --td-input-label-text-color: var(--color-black-1);
+    --td-input-suffix-icon-color: var(--color-black-2);
+    --td-button-medium-height: 44px;
+    --td-button-border-radius: 2px;
+    --td-checkbox-icon-size: 16px;
+    --td-checkbox-title-font: var(--td-font-body-small);
+    --td-checkbox-title-line-height: 18px;
+    --td-checkbox-title-color: var(--color-black-3);
+
+    .t-input {
+      padding: 16px 0;
+
+      .input__label {
+        @include flex($ai: center);
+      }
+
+      .input__extra {
+        @include flex($ai: center, $gap: 12px);
+
+        &::before {
+          content: '';
+          @include size(1px, 24px);
+          background-color: var(--td-component-stroke);
+        }
+
+        .send-btn {
+          @include text($size: 14px, $color: $color-brand);
+
+          &--disabled {
+            color: var(--color-black-3);
+          }
+        }
+      }
+
+      :deep(.t-input__control) {
+        @include text($size: 20px, $weight: 600, $color: $color-text);
+        caret-color: $color-brand;
+
+        &::placeholder {
+          @include text($size: 14px, $weight: 400, $color: var(--color-black-3));
+          letter-spacing: 0;
+          transform: translateY(-2px);
+        }
+      }
+
+      :deep(.t-input--password) {
+        letter-spacing: 4px;
+      }
+
+      :deep(.t-input__wrap--suffix-icon) {
+        font-size: 16px;
+      }
+    }
+
+    .t-checkbox {
+      :deep(.t-checkbox__icon--left) {
+        margin-right: 4px;
+      }
+
+      a {
+        color: $color-text;
+      }
+    }
+  }
+
+  .login-toggle {
+    text-align: center;
+
+    .toggle-btn {
+      @include text($size: 14px, $color: $color-text-4);
+    }
+  }
+}

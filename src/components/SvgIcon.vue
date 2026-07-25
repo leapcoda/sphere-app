@@ -5,7 +5,7 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 
-import { px2vw } from '@/utils/conversion';
+import { px2vw } from '@/utils/convert';
 
 const props = defineProps({
   name: { type: String, default: '' },

@@ -4,6 +4,11 @@ import Layout from '@/layouts/index.vue';
 
 const routes: RouteRecordRaw[] = [
   {
+    path: '/login',
+    name: 'login',
+    component: () => import('@/pages/login/index.vue'),
+  },
+  {
     path: '/',
     component: Layout,
     children: [
@@ -28,6 +33,11 @@ const routes: RouteRecordRaw[] = [
         component: () => import('@/pages/user/index.vue'),
       },
     ],
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    name: 'NotFound',
+    component: () => import('@/pages/error/NotFound.vue'),
   },
 ];
 

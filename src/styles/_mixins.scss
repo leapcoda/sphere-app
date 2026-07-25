@@ -5,6 +5,19 @@
   color: $color;
 }
 
+@mixin size($width: null, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin position($type: null, $top: null, $bottom: null, $left: null, $right: null) {
+  position: $type;
+  top: $top;
+  bottom: $bottom;
+  left: $left;
+  right: $right;
+}
+
 @mixin flex($direction: null, $jc: null, $ai: null, $gap: null, $wrap: null) {
   display: flex;
   flex-direction: $direction;

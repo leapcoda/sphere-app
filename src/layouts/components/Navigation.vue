@@ -28,10 +28,10 @@ const change = (value: string) => {
 };
 </script>
 
-<style lang="scss" scoped>
+<style scoped lang="scss">
 .t-tab-bar {
-  --td-tab-bar-color: #{$color-gray-1};
-  --td-tab-bar-active-color: #{$color-black-3};
+  --td-tab-bar-color: #{$color-text-4};
+  --td-tab-bar-active-color: #{$color-text};
 
   :deep(.t-tab-bar-item__icon) {
     height: 24px !important;
