@@ -2,29 +2,33 @@
   <component :is="svgIcon" :style="svgStyle" />
 </template>
 
-<script setup lang="ts">
+<script lang="ts" setup>
 import { computed } from 'vue';
 
 import { px2vw } from '@/utils/convert';
 
-const props = defineProps({
-  name: { type: String, default: '' },
-  size: { type: Number, default: 24 },
-  color: { type: String, default: '' },
-});
+interface Props {
+  name: string;
+  size?: number;
+  color?: string;
+}
+
+const {
+  name,
+  size = 24,
+  color = '',
+} = defineProps<Props>();
 
 const modules = import.meta.glob('@/assets/icons/*.svg', { import: 'default', eager: true });
 const svgIcon = computed(() => {
-  const key = `/src/assets/icons/${props.name}.svg`;
-  return modules[key] ? modules[key] : null;
+  const key = `/src/assets/icons/${name}.svg`;
+  return modules[key] ?? null;
 });
 
-const svgSize = computed(() => px2vw(props.size));
-const svgStyle = computed(() => {
-  return {
-    width: svgSize.value,
-    height: svgSize.value,
-    ...(props.color && { color: props.color }),
-  };
-});
+const svgSize = computed(() => px2vw(size));
+const svgStyle = computed(() => ({
+  width: svgSize.value,
+  height: svgSize.value,
+  ...(color && { color }),
+}));
 </script>

@@ -25,7 +25,7 @@
         <t-input v-show="loginType === 'sms'" v-model="loginData.smsCode" placeholder="请输入验证码" maxlength="4">
           <template #extra>
             <div class="input__extra">
-              <span class="send-btn" :class="{ 'send-btn--disabled': countdown > 0 }" @click="sendCode">
+              <span class="send-btn" :class="{ 'send-btn--disabled': !canSend }" @click="sendCode">
                 {{ countdown > 0 ? `重新发送&nbsp;(${countdown}s)` : '获取验证码' }}
               </span>
             </div>
@@ -46,7 +46,7 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script lang="ts" setup>
 import { ref, reactive, computed, onUnmounted } from 'vue';
 import { useRouter } from 'vue-router';
 
@@ -59,7 +59,8 @@ const loginText = {
   pwd: { title: '密码登录', desc: '请确保您已经设置登录密码', toggle: '使用验证码登录' },
 } as const;
 
-const loginType = ref<'sms' | 'pwd'>('sms');
+type LoginType = 'sms' | 'pwd';
+const loginType = ref<LoginType>('sms');
 const loginData = reactive({
   phone: '',
   password: '',
@@ -75,6 +76,9 @@ const displayPhone = computed({
   },
 });
 
+const canSend = computed(() =>
+  loginData.phone.length === 11 && countdown.value === 0);
+
 const canSubmit = computed(() =>
   loginData.phone.length === 11 && (loginData.smsCode.length === 4 || loginData.password.length >= 6)
 );
@@ -82,7 +86,7 @@ const canSubmit = computed(() =>
 onUnmounted(() => clearCountdown());
 
 const sendCode = () => {
-  if (countdown.value > 0) return;
+  if (!canSend.value) return;
   startCountdown(60);
 };
 
@@ -119,6 +123,6 @@ const clearCountdown = () => {
 };
 </script>
 
-<style scoped lang="scss">
-@use './index';
+<style lang="scss" scoped>
+@use './index.scss';
 </style>

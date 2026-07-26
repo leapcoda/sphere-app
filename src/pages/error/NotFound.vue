@@ -11,7 +11,7 @@
   </div>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 .page {
   @include flex($direction: column, $jc: center, $ai: center, $gap: 32px);
   min-height: 100dvh;
