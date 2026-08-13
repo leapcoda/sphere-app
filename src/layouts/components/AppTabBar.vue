@@ -9,7 +9,7 @@
   </t-tab-bar>
 </template>
 
-<script setup lang="ts">
+<script lang="ts" setup>
 import { ref } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 
@@ -28,10 +28,10 @@ const change = (value: string) => {
 };
 </script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 .t-tab-bar {
-  --td-tab-bar-color: #{$color-text-4};
-  --td-tab-bar-active-color: #{$color-text};
+  --td-tab-bar-color: var(--color-foreground-4);
+  --td-tab-bar-active-color: var(--color-foreground);
 
   :deep(.t-tab-bar-item__icon) {
     height: 24px !important;

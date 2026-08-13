@@ -1,8 +1,8 @@
 <template>
   <router-view />
-  <navigation />
+  <app-tab-bar />
 </template>
 
-<script setup lang="ts">
-import Navigation from './components/Navigation.vue';
+<script lang="ts" setup>
+import AppTabBar from './components/AppTabBar.vue';
 </script>

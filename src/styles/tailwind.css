@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+@theme {
+  /* 基准间距 */
+  --spacing: 4px;
+
+  /* 字体大小 */
+  --text-xs: 12px;
+  --text-sm: 14px;
+  --text-base: 16px;
+  --text-lg: 18px;
+  --text-xl: 20px;
+  --text-2xl: 24px;
+  --text-3xl: 30px;
+  --text-4xl: 36px;
+  --text-5xl: 48px;
+  --text-6xl: 60px;
+  --text-7xl: 72px;
+  --text-8xl: 96px;
+  --text-9xl: 128px;
+
+  /* 品牌色 */
+  --color-brand: #01c2c3;
+  --color-brand-2: #00feff;
+
+  /* 文本色 */
+  --color-foreground: #1d1d1f;
+  --color-foreground-2: #333336;
+  --color-foreground-3: #6e6e73;
+  --color-foreground-4: #86868b;
+
+  /* 边框色 */
+  --color-stroke: #d2d2d7;
+  --color-stroke-2: #e8e8ed;
+
+  /* 背景色 */
+  --color-surface: #f5f5f7;
+  --color-surface-2: #fafafc;
+}

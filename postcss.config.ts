@@ -8,7 +8,7 @@ export default {
       viewportUnit: 'vw',
       fontViewportUnit: 'vw',
       minPixelValue: 1,
-      allowMediaQuery: false,
+      allowMediaQuery: true,
       replaceRules: true,
     },
   },

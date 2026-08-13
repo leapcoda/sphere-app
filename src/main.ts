@@ -7,7 +7,7 @@ import router from './router';
 import pinia from './stores';
 
 import 'tdesign-mobile-vue/es/style/index.css';
-import '@/styles/index.scss';
+import '@/styles/index.css';
 
 const app = createApp(App);
 
