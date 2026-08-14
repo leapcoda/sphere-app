@@ -1,6 +1,6 @@
 import type { RouteRecordRaw } from 'vue-router';
 
-import Layout from '@/layouts/index.vue';
+import AppLayout from '@/layouts/index.vue';
 
 const routes: RouteRecordRaw[] = [
   {
@@ -10,16 +10,18 @@ const routes: RouteRecordRaw[] = [
   },
   {
     path: '/',
-    component: Layout,
+    component: AppLayout,
     children: [
       {
         path: '',
         name: 'explore',
+        meta: { showNavBar: true },
         component: () => import('@/pages/explore/index.vue'),
       },
       {
         path: 'shop',
         name: 'shop',
+        meta: { showNavBar: true },
         component: () => import('@/pages/shop/index.vue'),
       },
       {

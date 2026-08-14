@@ -19,6 +19,9 @@
   --text-8xl: 96px;
   --text-9xl: 128px;
 
+  /* 边框半径 */
+  --radius-xs: 2px;
+
   /* 品牌色 */
   --color-brand: #01c2c3;
   --color-brand-2: #00feff;
