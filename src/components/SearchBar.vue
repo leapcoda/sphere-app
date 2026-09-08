@@ -1,7 +1,7 @@
 <template>
   <div class="search-bar relative flex-1 h-9 px-3 bg-surface rounded-xs flex items-center">
     <!-- 词条滚动器 -->
-    <div class="text-roller max-w-35 overflow-hidden text-sm" :style="{ height: convertedHeight }">
+    <div class="text-roller max-w-45 overflow-hidden text-sm" :style="{ height: convertedHeight }">
       <div ref="trackRef" class="text-roller__track" :style="trackStyle">
         <div v-for="(item, index) in displayList" :key="index" class="whitespace-nowrap"
           :style="{ lineHeight: convertedHeight }">{{ item }}

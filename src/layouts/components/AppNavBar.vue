@@ -1,6 +1,7 @@
 <template>
-  <div class="app-navbar">
-    <div class="fixed top-0 inset-x-0 h-(--navbar-height) bg-white flex items-center px-4">
+  <div class="app-navbar relative z-200">
+    <div class="app-navbar__content fixed top-0 inset-x-0 h-(--navbar-height) bg-white flex items-center px-4"
+      :style="{ backgroundImage: !visible.logo ? 'none' : `url(${background})` }">
       <img class="collapsible mr-4 max-w-12" :class="{ 'collapsible--collapsed': !visible.logo }"
         src="@/assets/images/logo.png">
       <svg-icon class="collapsible mr-4" :class="{ 'collapsible--collapsed': !visible.icon }" name="back" :size="24" />
@@ -15,6 +16,7 @@
 <script lang="ts" setup>
 import SearchBar from '@/components/SearchBar.vue';
 import { useSuggestions } from '@/hooks/useSearchBar';
+import background from '@/assets/images/bg-nav.webp';
 
 interface Props {
   visible?: {
@@ -33,6 +35,10 @@ const { suggestions } = useSuggestions();
   --navbar-height: 48px;
   --nav-ease: cubic-bezier(.4, 0, .2, 1);
   --nav-duration: .3s;
+
+  &__content {
+    background-size: 100% 52px;
+  }
 }
 
 .collapsible {
