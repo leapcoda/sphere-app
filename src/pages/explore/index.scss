@@ -1,0 +1,25 @@
+.page {
+  --td-tab-item-height: 40px;
+  --td-tab-item-color: var(--color-foreground-4);
+  --td-tab-item-active-color: var(--color-foreground);
+  --td-tab-track-thickness: 2px;
+}
+
+.t-tabs {
+  width: 331px;
+  position: fixed;
+  top: 48px;
+  left: 0;
+}
+
+:deep(.t-tabs__item) {
+  padding: 0 12px;
+
+  &:first-child {
+    padding-left: 16px;
+  }
+}
+
+:deep(.t-tabs__track--top) {
+  bottom: 4px;
+}

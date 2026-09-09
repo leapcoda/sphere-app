@@ -1,0 +1,32 @@
+.page {
+  --td-tab-item-height: 40px;
+  --td-tab-item-color: #424245;
+  --td-tab-item-active-color: var(--color-foreground);
+  --td-tab-track-thickness: 2px;
+}
+
+.t-tabs {
+  width: 307px;
+  position: fixed;
+  top: 48px;
+  left: 0;
+}
+
+.wrapper::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: var(--td-component-stroke);
+  transform: scaleY(0.5);
+}
+
+:deep(.t-tabs__item:first-child) {
+  padding-left: 16px;
+}
+
+:deep(.t-tabs__item) {
+  padding: 0 12px;
+}
