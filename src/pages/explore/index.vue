@@ -4,7 +4,7 @@
     <div class="fixed z-100 top-12 right-0 flex items-center">
       <div class="w-5 h-10 bg-linear-to-r from-transparent to-white pointer-events-none"></div>
       <div class="h-10 pl-2 pr-4 bg-white flex items-center">
-        <div class="w-5 h-5 rounded-full bg-surface text-foreground-4 flex justify-center items-center">
+        <div class="w-5 h-5 rounded-[50%] bg-surface text-foreground-4 flex justify-center items-center">
           <svg-icon name="chevron-down" :size="14" />
         </div>
       </div>
@@ -13,7 +13,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, nextTick } from 'vue';
 import { useSuggestions } from '@/hooks/useSearchBar';
 
 const { setSuggestions } = useSuggestions();
@@ -33,6 +33,7 @@ const tabList = ref([
 
 onMounted(() => {
   setSuggestions(suggestions);
+  nextTick(() => window.dispatchEvent(new Event('resize')));
 });
 </script>
 

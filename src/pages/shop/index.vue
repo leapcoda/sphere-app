@@ -12,7 +12,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, nextTick } from 'vue';
 import { useSuggestions } from '@/hooks/useSearchBar';
 
 const { setSuggestions } = useSuggestions();
@@ -32,6 +32,7 @@ const tabList = ref([
 
 onMounted(() => {
   setSuggestions(suggestions);
+  nextTick(() => window.dispatchEvent(new Event('resize')));
 });
 </script>
 
