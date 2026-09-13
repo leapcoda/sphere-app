@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-@theme {
+@theme static {
   /* 基准间距 */
   --spacing: 4px;
 
