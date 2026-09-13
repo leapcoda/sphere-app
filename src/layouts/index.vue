@@ -1,7 +1,7 @@
 <template>
-  <app-nav-bar v-if="showNavBar" :visible="{ logo: isRootPath }" />
+  <app-nav-bar v-if="showNavBar" :visible />
   <router-view />
-  <app-tab-bar />
+  <app-tab-bar v-if="showTabBar" />
 </template>
 
 <script lang="ts" setup>
@@ -14,5 +14,12 @@ import AppTabBar from './components/AppTabBar.vue';
 const route = useRoute();
 
 const showNavBar = computed(() => Boolean(route.meta.showNavBar));
+const showTabBar = computed(() => Boolean(route.meta.showTabBar));
 const isRootPath = computed(() => route.path === '/');
+const isSearchPage = computed(() => route.name === 'search');
+const visible = computed(() => ({
+  logo: isRootPath.value,
+  back: !showTabBar.value,
+  action: isSearchPage.value,
+}));
 </script>
