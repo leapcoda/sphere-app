@@ -1,5 +1,5 @@
 <template>
-  <div class="page px-6 pt-4">
+  <div class="page pl-6 pr-5 pt-4">
     <!-- 历史记录 -->
     <section v-if="historyList.length">
       <div class="h-6 flex items-center justify-between">
@@ -35,6 +35,8 @@
 
 <script lang="ts" setup>
 import { ref, computed, watch, nextTick, onMounted } from 'vue';
+
+import { useSuggestions } from '@/hooks/useSearchBar';
 
 const historyList = ref([
   '李宁赤兔9 pro',
@@ -94,7 +96,13 @@ const refreshGuess = () => { };
 
 const search = (_keyword: string) => { };
 
-onMounted(measure);
+const { suggestions, setSuggestions } = useSuggestions();
+
+onMounted(() => {
+  measure();
+  // 刷新页面 placeholder 丢失
+  if (!suggestions.value.length) setSuggestions(guessList.value.slice(0, 1));
+});
 </script>
 
 <style lang="scss" scoped>
